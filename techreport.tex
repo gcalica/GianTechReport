@@ -49,7 +49,7 @@
     Implementation of this page does raise some performance questions to answer.
     Just like the Course/Opportunity Scoreboard, I think that this page will definitely be a useful page that can be visited by people other than RadGrad admins such as Advisors or Faculty.
     Therefore it is important that page is performant and loads quickly.
-    Unfortunately, we know from some metrics that was posted on #development that the UserInteraction collection is the biggest collection.
+    Unfortunately, we know from some metrics that was posted on \#development that the UserInteraction collection is the biggest collection.
     Querying from this collection will definitely take a hit in performance.
     Another method we can use is to have a cron job that supplies page visits statistics to a collection every X amount of time.
     But this doesn't necessarily guarantee that this is performant (either in space or time).
