@@ -14,8 +14,16 @@
 
     \section{Introduction}
     \label{sec:introduction}
-    
-    \textbf{Problem}: There is currently no easy and accessible way for RadGrad admins to see the most viewed pages in RadGrad.
+    The field of computer science has rapidly expanded in such a short amount of time over the last few decades and is
+    continuing to expand at a growing rate.
+    As it continues to expand, so must also the technologies that support it.
+    Every month there are new technologies being released, whether it's a programming language or a framework for a
+    language, all of which claim to have an advantage over a previous technology.
+    It is becoming a problem as an entry barrier to the field of computer science as those coming into the field are
+    unsure which technologies are worth investing their time into.
+
+
+    A problem that undergraduates at University of Hawaii at Manoa face is that they are often inexperienced and unfamiliar with the field of computer science that they too do not know which of these emerging technologies are worth investing their effort into to ensure that they have a solid foundation for their career.
 
     There was a spreadsheet a few months ago that showed the page visits for each page in RadGrad.
     The most notable highlight from this data sheet was that we could see which Interests, Career Goals, Interests, Courses, and Opportunities were the most visited.
@@ -49,7 +57,7 @@
     Implementation of this page does raise some performance questions to answer.
     Just like the Course/Opportunity Scoreboard, I think that this page will definitely be a useful page that can be visited by people other than RadGrad admins such as Advisors or Faculty.
     Therefore it is important that page is performant and loads quickly.
-    Unfortunately, we know from some metrics that was posted on \#development that the UserInteraction collection is the biggest collection.
+    Unfortunately, we know from some metrics that was posted on #development that the UserInteraction collection is the biggest collection.
     Querying from this collection will definitely take a hit in performance.
     Another method we can use is to have a cron job that supplies page visits statistics to a collection every X amount of time.
     But this doesn't necessarily guarantee that this is performant (either in space or time).
