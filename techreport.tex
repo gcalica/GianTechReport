@@ -8,66 +8,65 @@
 \author{Gian Calica \\Collaborative Software Development Laboratory \\ Information and Computer Sciences \\ University of Hawaii}
 
 \begin{document}
-    \maketitle
-    \tableofcontents
-    \newpage
+  \maketitle
+  \tableofcontents
+  \newpage
 
-    \section{Introduction}
-    \label{sec:introduction}
-    The field of computer science has rapidly expanded in such a short amount of time over the last few decades and is
-    continuing to expand at a growing rate.
-    As it continues to expand, so must also the technologies that support it.
-    Every month there are new technologies being released, whether it's a programming language or a framework for a
-    language, all of which claim to have an advantage over a previous technology.
-    It is becoming a problem as an entry barrier to the field of computer science as those coming into the field are
-    unsure which technologies are worth investing their time into.
+  \section{Introduction}
+  \label{sec:introduction}
+  The field of computer science has rapidly expanded in such a short amount of time over the last few decades and is
+  continuing to expand at a growing rate.
+  As it continues to expand, so must also the technologies that support it.
+  Every month there are new technologies being released, whether it's a programming language or a framework for a
+  language, all of which claim to have an advantage over a previous technology.
+  It is becoming a problem as an entry barrier to the field of computer science as those coming into the field are
+  unsure which technologies are worth investing their time into.
 
+  A problem that undergraduates at University of Hawaii at Manoa face is that they are often inexperienced and unfamiliar with the field of computer science that they too do not know which of these emerging technologies are worth investing their effort into to ensure that they have a solid foundation for their career.
 
-    A problem that undergraduates at University of Hawaii at Manoa face is that they are often inexperienced and unfamiliar with the field of computer science that they too do not know which of these emerging technologies are worth investing their effort into to ensure that they have a solid foundation for their career.
+  There was a spreadsheet a few months ago that showed the page visits for each page in RadGrad.
+  The most notable highlight from this data sheet was that we could see which Interests, Career Goals, Interests, Courses, and Opportunities were the most visited.
+  This is a very useful dataset that could help us figure out which are the most interesting (by page visits) Interests, Career Goals, Interests, Courses, and Opportunities.
+  From this dataset, we can also possibly see a trend to see what kind of things or groups of things interest students and even compare this to the current industry and see how they match up.
 
-    There was a spreadsheet a few months ago that showed the page visits for each page in RadGrad.
-    The most notable highlight from this data sheet was that we could see which Interests, Career Goals, Interests, Courses, and Opportunities were the most visited.
-    This is a very useful dataset that could help us figure out which are the most interesting (by page visits) Interests, Career Goals, Interests, Courses, and Opportunities.
-    From this dataset, we can also possibly see a trend to see what kind of things or groups of things interest students and even compare this to the current industry and see how they match up.
+  Unfortunately, this requires the RadGrad admins to go through the process of having to aggregate this data and put that data into a spreadsheet in order to see the dataset.
 
-    Unfortunately, this requires the RadGrad admins to go through the process of having to aggregate this data and put that data into a spreadsheet in order to see the dataset.
+  \section{Research Design}
+  \label{sec:research-design}
 
-    \section{Research Design}
-    \label{sec:research-design}
+  This can be further improved by just automating this process so that the RadGrad admins (and possibly other roles like Advisors) can simply just visit a dedicated page in the RadGrad website to see the page visits for all the Interests, Career Goals, Interests, Courses, and Opportunities.
 
-    This can be further improved by just automating this process so that the RadGrad admins (and possibly other roles like Advisors) can simply just visit a dedicated page in the RadGrad website to see the page visits for all the Interests, Career Goals, Interests, Courses, and Opportunities.
+  In this dedicated page, there will be a section for each area: Interests, Career Goals, Interests, Courses, and Opportunities.
+  And in each section will list the names for that area and beside it would be the page visits for each corresponding name.
+  What will make this page powerful is that we can filter each of the names to show us which are the Most Viewed or Least Viewed by page visits and the standard Alphabetical filter.
 
-    In this dedicated page, there will be a section for each area: Interests, Career Goals, Interests, Courses, and Opportunities.
-    And in each section will list the names for that area and beside it would be the page visits for each corresponding name.
-    What will make this page powerful is that we can filter each of the names to show us which are the Most Viewed or Least Viewed by page visits and the standard Alphabetical filter.
+  There is another filter that we can also add: Trending.
+  In media streaming websites, a common filter that they have is "Trending" or "Most Popular".
+  And this filter can be further narrowed down to a date range such as "Today," "Past Week," "Past Month", "Past Year." What this filter would basically do is show the trending or most popular areas within a date range.
+  When it comes to the date range, from an administrator perspective, it would probably make more sense if they can choose a specified date range rather than a user's perspective ("Today," "Past Week," "Past Month", "Past Year.").
 
-    There is another filter that we can also add: Trending.
-    In media streaming websites, a common filter that they have is "Trending" or "Most Popular".
-    And this filter can be further narrowed down to a date range such as "Today," "Past Week," "Past Month", "Past Year." What this filter would basically do is show the trending or most popular areas within a date range.
-    When it comes to the date range, from an administrator perspective, it would probably make more sense if they can choose a specified date range rather than a user's perspective ("Today," "Past Week," "Past Month", "Past Year.").
+  There is a lot of research data that can be collected and speculated from this filter alone.
+  One research question would be, "Why did the interest Data Science and career goal Data Scientist suddenly spike up in page visits in this certain date range?" Then when we investigate this cause, we might find that a course related to Data Science was actually offered in that semester of that date range.
+  From this research investigation, we might conclude that our RadGrad team should promote and look for opportunities related to Data Science in that particular date range.
 
-    There is a lot of research data that can be collected and speculated from this filter alone.
-    One research question would be, "Why did the interest Data Science and career goal Data Scientist suddenly spike up in page visits in this certain date range?" Then when we investigate this cause, we might find that a course related to Data Science was actually offered in that semester of that date range.
-    From this research investigation, we might conclude that our RadGrad team should promote and look for opportunities related to Data Science in that particular date range.
+  Just like the purpose of collecting "Students Participating" data for a Course or Opportunity, the ICS faculty and department can also use this dataset to see which areas they should emphasize and focus on teaching the students.
 
-    Just like the purpose of collecting "Students Participating" data for a Course or Opportunity, the ICS faculty and department can also use this dataset to see which areas they should emphasize and focus on teaching the students.
+  \section{Data to Collect}
+  \label{sec:data-to-collect}
+  Implementation of this page does raise some performance questions to answer.
+  Just like the Course/Opportunity Scoreboard, I think that this page will definitely be a useful page that can be visited by people other than RadGrad admins such as Advisors or Faculty.
+  Therefore it is important that page is performant and loads quickly.
+  Unfortunately, we know from some metrics that was posted on \#development that the UserInteraction collection is the biggest collection.
+  Querying from this collection will definitely take a hit in performance.
+  Another method we can use is to have a cron job that supplies page visits statistics to a collection every X amount of time.
+  But this doesn't necessarily guarantee that this is performant (either in space or time).
+  Therefore, it may be that we might have to implement these two methods and just see which one is better.
+  Or just some preliminary research and discussion about which one is more performant than the other.
 
-    \section{Data to Collect}
-    \label{sec:data-to-collect}
-    Implementation of this page does raise some performance questions to answer.
-    Just like the Course/Opportunity Scoreboard, I think that this page will definitely be a useful page that can be visited by people other than RadGrad admins such as Advisors or Faculty.
-    Therefore it is important that page is performant and loads quickly.
-    Unfortunately, we know from some metrics that was posted on #development that the UserInteraction collection is the biggest collection.
-    Querying from this collection will definitely take a hit in performance.
-    Another method we can use is to have a cron job that supplies page visits statistics to a collection every X amount of time.
-    But this doesn't necessarily guarantee that this is performant (either in space or time).
-    Therefore, it may be that we might have to implement these two methods and just see which one is better.
-    Or just some preliminary research and discussion about which one is more performant than the other.
+  \bibliography{techreport}
+  \bibliographystyle{plainnat}
 
-    \bibliography{techreport}
-    \bibliographystyle{plainnat}
-
-    \appendix
+  \appendix
 
 \end{document}
 
