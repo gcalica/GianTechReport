@@ -4,7 +4,7 @@
 \usepackage[square,numbers]{natbib}
 \usepackage[nottoc,numbib]{tocbibind}
 
-\title{RadGrad Page Tracker Proposal}
+\title{Improved understanding of student interests in Computer Science through Page Tracking Analysis}
 \author{Gian Calica \\Collaborative Software Development Laboratory \\ Information and Computer Sciences \\ University of Hawaii}
 
 \begin{document}
@@ -17,44 +17,76 @@
   The field of computer science has rapidly expanded in such a short amount of time over the last few decades and is
   continuing to expand at a growing rate.
   As it continues to expand, so must also the technologies that support it.
-  Every month there are new technologies being released, whether it's a programming language or a framework for a
-  language, all of which claim to have an advantage over a previous technology.
+  Every month there are new technologies being released, whether it's a programming language, a framework, or a new
+  library encapsulating domain knowledge or an algorithmic technique for a language, all of which claim to have an
+  advantage over a previous technology.
 
-  As the field continues to expand, it is important for the Information and Computer Sciences (ICS) Department in University of Hawaii at Manoa (UHM) is able to respond and keep up with these fast-changing developments in the field of Computer Science through its curriculum. Through the system of RadGrad, one way that allows the ICS Department to be able to tell which courses to include in its curriculum to be able to have its students prepared for the computer science industry is the ability of students to plan future courses in their degree program. RadGrad can track how many students plan to take certain courses and in which semesters, and this statistic can be used by the students as a way to tell the ICS Department which type of courses they are interested in.
+  As the field continues to expand, it is important for the Information and Computer Sciences (ICS) Department in
+  University of Hawaii at Manoa (UHM) to be able to respond and keep up with these fast-changing developments.
+  RadGrad is one way the ICS Department can tell which courses to include in its curriculum. RadGrad can track how
+  many students plan to take certain courses and in which semesters, and this statistic can be used by the students as
+  a way to tell the ICS Department which type of courses they are interested in.
 
-  The RadGrad system also has a way to track how many students are interested in a particular area of Computer Science through interests. However, many of these interests have no course available in the ICS Department to teach students about those interests. This proposal proposes an implementation to be able to analyze students' RadGrad usage such that we can discover if there is a demand for a topic(s) of computer science that is currently not known by the faculty of ICS Department.
+  RadGrad also has a way to track how many students are interested in a particular area of Computer Science through
+  interests. However, many of these interests have no course available in the ICS Department to teach students about
+  those interests. This proposal proposes a mechanism called ``Page Tracking Analysis'' which can discover existing
+  or emergent demand for topic areas by computer science students.
 
   \section{Research Design}
   \label{sec:research-design}
 
   In the context of the RadGrad system, we will define a student's interest in a particular topic with two definitions: 1) if the student has visited the corresponding page for that topic in RadGrad and 2) if the student has added that topic to their favorites.
 
-  With those definitions in mind, this proposal will implement a new page on the RadGrad2 system called the Page Visits Scoreboard. It is named scoreboard because the RadGrad2 system already has similar pages called scoreboards that function similarly but for different data.
+  With those definitions in mind, this proposal will implement a capability called the Page Tracking Analysis. It is
+  implemented like a scoreboard because the RadGrad2 system already has similar pages called scoreboards that function
+  similarly but for different data.
 
-  In this dedicated page, there will be a section for each topic category: Interests, Career Goals, Interests, Courses, and Opportunities.
-  And in each section will list the names for that area and beside it would be the page visits for each corresponding name.
-  What will make this page powerful is that we can filter each of the names to show us which are the Most Viewed or Least Viewed by page visits and the standard Alphabetical filter.
+  In this dedicated page, there will be a section for each topic category: Interests, Career Goals, Interests, Courses,
+  and Opportunities. Each section will list the names for that area and beside it would be the page visits for each
+  corresponding name. What will make this page powerful is that we can filter each of the names to show us which are
+  the Most Viewed or Least Viewed by page visits and the standard Alphabetical filter.
 
-  There is another filter that we can also add: Trending.
-  In media streaming websites, a common filter that they have is "Trending" or "Most Popular".
-  And this filter can be further narrowed down to a date range such as "Today," "Past Week," "Past Month", "Past Year." What this filter would basically do is show the trending or most popular areas within a date range.
-  When it comes to the date range, from a faculty perspective, it would probably make more sense if they can choose a specified date range rather than a user's perspective ("Today," "Past Week," "Past Month", "Past Year.").
+  There is another filter that we can add: Trending. In media streaming websites, a common filter is ``Trending'' or
+  ``Most Popular''. And this filter can be further narrowed down to a date range such as ``Today,''
+  ``Past Week,'' ``Past Month'', ``Past Year.'' This filter will show the trending or most popular areas within a date
+  range. When it comes to the date range, the faculty can choose a specified date range rather than a user's
+  perspective (``Today,'' ``Past Week,'' ``Past Month'', ``Past Year.'').
 
-  With these statistics being tracked, we can analyze and see if there is a demand for a particular topic that the faculty does not currently know through these page visits.
-  One question that could be explored would be, "Why did the interest Data Science and career goal Data Scientist suddenly spike up in page visits in this certain date range?" Then when we investigate this cause, we might find that a course related to Data Science was actually offered in that semester of that date range.
-  From this research investigation, we might conclude that our RadGrad team should promote and look for opportunities related to Data Science in that particular date range.
+  With these statistics being tracked, we can now analyze and see if there is a demand for a particular topic that the
+  faculty does not currently know through these page visits. One question that could be explored would be, ``Why did
+  the interest Data Science and career goal Data Scientist suddenly spike up in page visits in this certain
+  date range?'' Then when we investigate this cause, we might find that a course related to Data Science was actually
+  offered in that semester of that date range. From this research investigation, we might conclude that our RadGrad
+  team should promote and look for opportunities related to Data Science in that particular date range.
 
-  Just like the purpose of collecting "Students Participating" data for a Course or Opportunity, the ICS faculty and department can also use this dataset to see which areas they should emphasize and focus on teaching the students.
+  Just like the purpose of collecting ``Students Participating'' data for a Course or Opportunity, the ICS faculty and
+  department can also use this dataset to see which areas they should emphasize and focus on teaching the students.
 
-  As students also explore the field of computer science beyond what their classes teach, analyzing which fields in computer science they are most interested in allows us to also have a glimpse of what the field of computer science is heading towards. This can better prepare the ICS Department to adjust the courses and curriculum to meet with the standards of the constantly expanding computer science industry.
+  As students also explore the field of computer science beyond what their classes teach, analyzing which fields in
+  computer science they are most interested in allows us to also have a glimpse of what the field of computer science
+  is heading towards. This can better prepare the ICS Department to adjust the courses and curriculum to meet with the
+  standards of the constantly expanding computer science industry.
 
   \section{Implementation}
   \label{sec:implementation}
-  Currently, this scoreboard will be only viewable to the faculty of the ICS Department. More specifically, in terms of RadGrad's system, it will be viewable to the Administrators, Faculty, and Advisors. The reason why this scoreboard will not be viewable to students is because students can already visually see how many other students are participating in a topic area. Since this scoreboard is being implemented for the purpose of analyzing RadGrad usage by students to be used by the ICS Department, it currently makes sense to only make this scoreboard available to those roles. However, if this scoreboard does want to be later changed so that it is viewable to students, this can be easily implemented later on.
+  Although we define a student visiting the page of a particular topic as the student being interested in that topic,
+  we do not want to count each page visit counting towards their interest. There are certain circumstances such as
+  accidentally clicking the page even though they were not interested in that topic that might skew the data. I need to
+  figure out an algorithm or system to determine this. Some factors to consider are time between a student visiting the
+  page for a topic versus a student leaving the page or time between a student visiting the page for a topic versus a
+  student adding that topic to their favorites.
 
-  Although we define a student visiting the page of a particular topic as the student being interested in that topic, we do not want to count each page visit counting towards their interest. There are certain circumstances such as accidentally clicking the page even though they were not interested in that topic that might skew the data. I need to figure out an algorithm or system to determine this. Some factors to consider are time between a student visiting the page for a topic versus a student leaving the page or time between a student visiting the page for a topic versus a student adding that topic to their favorites.
-
-  Since the data of page visits is tracked and can only be queried from the UserInteractions collection, this raises a few obstacles in the implementation. The first obstacle is that querying from UserInteractions is only permitted for Administrator roles. Therefore, any other roles such as Faculty or Advisor will not even get the data when they load up the page. The second obstacle is that UserInteractions is the biggest collection in the RadGrad system. Besides page visits, UserInteractions also track other statistics such as student interactions with their profile. Therefore, querying from this collection directly will lead to time complexity issues. To overcome these obstacles, a separate collection must be made to specifically track the page visits for each topic area. Querying from this collection will be available to Administrators, Faculty, and Advisors. In the UserInteractions collection, each student interaction (such as a page visit) is one document object in that collection. This is the main reason why the UserInteraction collection is massive. In this new collection, a document will contain the value of the sum of the page visits for all the topic areas.
+  Since the data of page visits is tracked and can only be queried from the UserInteractions collection, this raises a
+  few obstacles in the implementation. The first obstacle is that querying from UserInteractions is only permitted for
+  Administrator roles. Therefore, any other roles such as Faculty or Advisor will not even get the data when they load
+  up the page. The second obstacle is that UserInteractions is the biggest collection in the RadGrad system. Besides
+  page visits, UserInteractions also track other statistics such as student interactions with their profile. Therefore,
+  querying from this collection directly will lead to time complexity issues. To overcome these obstacles, a separate
+  collection must be made to specifically track the page visits for each topic area. Querying from this collection will
+  be available to Administrators, Faculty, and Advisors. In the UserInteractions collection, each student interaction
+  (such as a page visit) is one document object in that collection. This is the main reason why the UserInteraction
+  collection is massive. In this new collection, a document will contain the value of the sum of the page visits for
+  all the topic areas.
 
   \section{Data Analysis}
   \label{sec:data-analysis}
@@ -63,13 +95,6 @@
   \section{Evaluation}
   \label{sec:evaluation}
   This section is about discussing how to evaluate the effectiveness of this scoreboard once it has been implemented.
-
-  \section{Conclusion}
-  \label{sec:conclusion}
-  This section is about the results of the evaluation after this scoreboard has been on the system and used by real RadGrad students for at least one semester.
-
-  \bibliography{techreport}
-  \bibliographystyle{plainnat}
 
   \appendix
 
