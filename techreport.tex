@@ -35,26 +35,40 @@
   \section{Research Design}
   \label{sec:research-design}
 
-  In the context of the RadGrad system, we will define a student's interest in a particular topic with two definitions: 1) if the student has visited the corresponding page for that topic in RadGrad and 2) if the student has added that topic to their favorites.
+  In the context of the RadGrad system, we will define a student's interest in a particular topic with two definitions:
+  1) if the student has visited the corresponding page for that topic in RadGrad and 2) if the student has added that
+  topic to their favorites.
 
-  With those definitions in mind, this proposal will implement a capability called the Page Tracking Analysis. It is
-  implemented like a scoreboard because the RadGrad2 system already has similar pages called scoreboards that function
-  similarly but for different data.
+  \begin{figure}[h]
+    \includegraphics[width=\textwidth]{numericalmockup.eps}
+    \caption{Page Tracking Analysis Scoreboard}
+    \label{fig:page-tracking-analysis-scoreboard}
+  \end{figure}
 
-  In this dedicated page, there will be a section for each topic category: Career Goals, Courses, Interests, and
-  Opportunities. Each section will list the names for that area and beside it would be the page visits for each
-  corresponding name. What will make this page powerful is that we can filter each of the names to show us which are
-  the Most Viewed or Least Viewed by page visits and the standard Alphabetical filter.
+  With those definitions in mind, this proposal will implement a capability called the Page Tracking Analysis. There
+  will be two dedicated pages under this capability. The first page is implemented like a scoreboard because the
+  RadGrad2 system already has similar pages called scoreboards that function similarly but for different data. In this
+  dedicated page, there will be a section for each topic category: Career Goals, Courses, Interests, and Opportunities.
+  This is shown in the left menu of Figure \ref{fig:page-tracking-analysis-scoreboard} Each section will list the names
+  for that area and beside it would list the page visits for each corresponding name. This page has the ability to sort
+  each sections based on alphabetical order, most views, and least views. Users will also be able to filter the data
+  that belongs within a specific date range, the past month, by semester, or by academic year. This is shown in the right
+  side of Figure \ref{fig:page-tracking-analysis-scoreboard}.
 
-  There is another filter that we can add: Trending. In media streaming websites, a common filter is ``Trending'' or
-  ``Most Popular''. And this filter can be further narrowed down to a date range such as ``Today,''
-  ``Past Week,'' ``Past Month'', ``Past Year.'' This filter will show the trending or most popular areas within a date
-  range. When it comes to the date range, the faculty can choose a specified date range rather than a user's
-  perspective (``Today,'' ``Past Week,'' ``Past Month'', ``Past Year.'').
+  The second dedicated page will have a functionality to be able to analyze the trends of page views for each topic
+  category more in-depth. This page will allow a user to select multiple entities from a single topic category and will
+  show graphical charts and plots of the page views only for those selected entities. By default, it will sum all the
+  page views for those entities since the beginning of the database snapshot. Then users will have the ability to filter
+  the data of page views within a specific date range, within the past month, by semester, or by academic year.
+
+  %  TODO: Mockup picture of the second dedicated page
 
   With these statistics being tracked, we can now analyze and see if there is a demand for a particular topic that the
-  faculty does not currently know through these page visits. One question that could be explored would be, ``Why did
-  the interest Data Science and career goal Data Scientist suddenly spike up in page visits in this certain
+  faculty does not currently know through these page visits. The first page gives us an overview of the page views
+  for all the entities for a particular topic category. The second page allows us to analyze if there is a trend of page
+  views for specific entities within a particular topic category. This gives us a system that can provide insights about
+  student interests that the faculty might not be aware of. One question that could be explored would be, ``Why did
+  the interest Data Science or career goal Data Scientist suddenly spike up in page visits in this certain
   date range?'' Then when we investigate this cause, we might find that a course related to Data Science was actually
   offered in that semester of that date range. From this research investigation, we might conclude that our RadGrad
   team should promote and look for opportunities related to Data Science in that particular date range.
@@ -87,14 +101,6 @@
   (such as a page visit) is one document object in that collection. This is the main reason why the UserInteraction
   collection is massive. In this new collection, a document will contain the value of the sum of the page visits for
   all the topic areas.
-
-  \section{Data Analysis}
-  \label{sec:data-analysis}
-  This section is about how to represent the data.
-
-  \section{Evaluation}
-  \label{sec:evaluation}
-  This section is about discussing how to evaluate the effectiveness of this scoreboard once it has been implemented.
 
   \appendix
 
