@@ -102,6 +102,38 @@
   collection is massive. In this new collection, a document will contain the value of the sum of the page visits for
   all the topic areas.
 
+  \section{Evaluation}
+  \label{sec:evaluation}
+  It would be more appropriate if this new feature is evaluated after it has been deployed to RadGrad2 for at least a
+  two semesters since it will be implemented in that version of RadGrad. Nonetheless, this feature can still be
+  evaluated to some degree if we manually feed the data of page views from RadGrad1 to this implementation in RadGrad2.
+  However, this evaluation might not accurately reveal if there are unknown threads when it comes to student interests.
+  As discussed in the Implementation section, our implementation of page views will differ in RadGrad2 from RadGrad1. We
+  won't necessarily be counting every single page view as a student interest due to the fact that misclicks can happen or
+  a student may visit a single page multiple times within a session.
+
+  When we do evaluate this feature with a semester or two of RadGrad2 data, we can evaluate trends in two ways. The first
+  way corresponds to the two dedicated pages of the Page Tracking Analysis. The first page can be used to find general
+  trend of page views for all areas in each topic category and the second page can be used to target specific areas of
+  each topic category to view their trend of page views.
+
+  The second way corresponds to evaluating the trend of page views for students as they go through Freshman year through
+  their Senior year. One problem that lies with this is classifying who is Freshman and who is Sophmore. This is hard to
+  classify because everybody goes through their degree program differently. There are some who have more balanced semesters
+  with ICS specific courses along with non-ICS courses and there are others who end up taking three or more ICS specific
+  courses in a single semester. Therefore, I have classified these school years into two parts: the first part corresponds
+  to students who are less than halfway through their program and the second part corresponds to students who are halfway
+  through and nearing the end of their program. This is because the first part would just be students taking the required
+  ICS courses for their degree program. The trend of student interests at this time period may not necessarily change from
+  what they were already interested in at the time of their RadGrad onboarding. We compare this first part to the second part
+  as this is when students are most likely finished with all, if not most, of their required courses and are finally taking
+  ICS electives that they are free to choose. Comparing their page views at this period of time to their page views of the first
+  part can give us an overview of how their student interests changed over time. Did the students' change of interest match
+  the type of courses they have taken? Did it even change at all from the first part? Or did it change, but not necessarily
+  matching with the type of courses they have taken? This second way seems to be another feature to implement that
+  specifically looks at the period of time that a student is currently in (whether they are the first or second part),
+  queries their page views from those parts, and finally gives an output to display these queries.
+
   \appendix
 
 \end{document}
